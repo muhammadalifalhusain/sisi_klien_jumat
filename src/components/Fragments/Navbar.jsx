@@ -1,8 +1,15 @@
-import { NavLink } from "react-router-dom";
+
 import { Icon } from "../Elements/Icon";
 import Logo from "../Elements/Logo";
+import Main_Menu from "../../pages/main_menu";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate ("/main");
+  };
   const menus = [
     {
       id: "overview",
@@ -71,15 +78,15 @@ const Navbar = () => {
           ))}
         </div>
         <div>
-          <NavLink
-            to="/logout"
-            className="flex bg-special-bg3 px-4 py-3 rounded-md hover:text-white"
+        <button
+            onClick={handleLogout}
+            className="flex bg-special-bg3 px-4 py-3 rounded-md hover:text-white w-full"
           >
             <div className="mx-auto sm:mx-0">
               <Icon.Logout />
             </div>
             <div className="ms-3 hidden sm:block">Logout</div>
-          </NavLink>
+          </button>
           <div className="border-b my-10 border-b-special-bg"></div>
           <NavLink to="/profile" className="flex justify-between">
             <div className="mx-auto sm:mx-0 self-center">
