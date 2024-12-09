@@ -1,6 +1,6 @@
 import { useState } from "react";
+import transactions from "../../../data/transactions";
 import Card from "../../Elements/Card";
-import transactions from "../../../data/transaction";
 
 const CardTransaction = () => {
     const [trxs, setTrx] = useState(transactions);
